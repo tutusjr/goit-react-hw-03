@@ -1,0 +1,42 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.desc{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactList{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.items-container{
+  display: inline-flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  min-width: 250px;
+}
+
+.deleteButton{
+  text-align: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(255, 160, 160);
+
+}
