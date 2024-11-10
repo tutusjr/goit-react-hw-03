@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './SearchBox.module.css'
 
 export default function SearchBox({ onSearch }) {
     const [searchTerm, setSearchTerm] = useState('');
@@ -12,7 +13,8 @@ export default function SearchBox({ onSearch }) {
     };
 
     return (
-        <form onSubmit={(e) => e.preventDefault()}> {}
+        <form className={styles.searchBox} onSubmit={(e) => e.preventDefault()}> {}
+            <label>find Contacts by name</label>
             <input
                 type="search"
                 value={searchTerm}

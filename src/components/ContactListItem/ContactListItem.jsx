@@ -1,9 +1,10 @@
 
+import styles from './ContactListItem.module.css'
 export default function ContactListItem({item, deleteById}) {
 
   return (
-    <div className="items-container">
-    <div className="desc">
+    <div className={styles.itemContainer}>
+    <div className={styles.desc}>
         <p>{item.name}</p>
         <p>{item.number}</p>
     </div>

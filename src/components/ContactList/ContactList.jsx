@@ -1,5 +1,6 @@
-import { useState } from "react";
-import ContactListItem from "./ContactListItem";
+
+import ContactListItem from "../ContactListItem/ContactListItem";
+import styles from './ContactList.module.css'
 
 export default function ContactList({ list, setList }) {
   const deleteById = (id) => {
@@ -11,7 +12,7 @@ export default function ContactList({ list, setList }) {
   };
 
   return (
-    <div className="contactList">
+    <div className={styles.contactList}>
       {list.map((item) => (
         <ContactListItem
           deleteById={() => deleteById(item.id)}

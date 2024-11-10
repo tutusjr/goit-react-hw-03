@@ -1,0 +1,15 @@
+.desc{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .itemContainer{
+    display: inline-flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    min-width: 250px;
+  }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import styles from './ContactForm.module.css'
 
 export default function ContactForm({ list, setList }) {
   const initialValues = { name: "", number: "" };
@@ -8,7 +9,6 @@ export default function ContactForm({ list, setList }) {
   const validation = Yup.object().shape({
     name: Yup.string().min(3).max(50).required("required"),
     number: Yup.string()
-      .matches(/^\d{3}-\d{2}-\d{2}$/)
       .required("required"),
   });
 
@@ -24,7 +24,7 @@ export default function ContactForm({ list, setList }) {
 
   return (
     <div>
-      <h1>Phonebook</h1>
+      <h1 className={styles.title}>Phonebook</h1>
       <Formik
         initialValues={initialValues}
         validationSchema={validation}
@@ -48,20 +48,20 @@ export default function ContactForm({ list, setList }) {
         }}
       >
         {({ setFieldValue }) => (
-          <Form>
-            <div>
-              <label htmlFor="name">İsim:</label>
+          <Form className={styles.formContainer}>
+            <div className={styles.label}>
+              <label>İsim:</label>
               <Field name="name" placeholder="İsminizi girin" maxLength="50" />
-              <ErrorMessage name="name" component="div" />
+              <ErrorMessage className={styles.errorMessage} name="name" component="div" />
             </div>
-            <div>
+            <div className={styles.label}>
               <label htmlFor="number">Telefon Numarası:</label>
               <Field
                 name="number"
                 placeholder="322-55-33"
                 onChange={(event) => handleNumberChange(event, setFieldValue)}
               />
-              <ErrorMessage name="number" component="div" />
+              <ErrorMessage className={styles.errorMessage} name="number" component="div" />
             </div>
             <button type="submit">Gönder</button>
           </Form>
